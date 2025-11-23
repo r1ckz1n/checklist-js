@@ -1,15 +1,22 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f6f6;
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --primary-color: #333b4c;
+  --accent-color: #4caf50;
+  --accent-hover: #45a049;
+  --danger-color: #f44336;
+  --danger-hover: #d32f2f;
+  --bg-color: #f7f8fc;
+  --surface-color: #ffffff;
+  --text-color: #333;
+  --text-secondary: #888;
 }
 
-header {
-  background-color: #333b4c;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eceff1, #f7f8fc);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -17,10 +24,22 @@ h1 {
 }
 
 main {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
 }
 
 .input-container {
@@ -33,7 +52,15 @@ input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 250px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
 button {
@@ -43,21 +70,23 @@ button {
   color: white;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 
 #addBtn {
-  background-color: #4caf50;
+  background-color: var(--accent-color);
 }
 
 #addBtn:hover {
-  background-color: #45a049;
+  background-color: var(--accent-hover);
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  width: 350px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 
@@ -65,35 +94,40 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
-  padding: 10px;
+  background-color: var(--surface-color);
+  padding: 15px;
   margin-bottom: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
 }
 
 .buttons {
   display: flex;
   gap: 5px;
 }
-
 .done-btn {
-  background-color: #4caf50;
+  background-color: var(--accent-color);
 }
 
 .done-btn:hover {
-  background-color: #3d8b41;
+  background-color: var(--accent-hover);
 }
 
 .delete-btn {
-  background-color: #f44336;
+  background-color: var(--danger-color);
 }
 
 .delete-btn:hover {
-  background-color: #d32f2f;
+  background-color: var(--danger-hover);
 }
 
 .completed {
   text-decoration: line-through;
-  color: #888;
+  color: var(--text-secondary);
 }
